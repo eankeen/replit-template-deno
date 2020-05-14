@@ -1,0 +1,14 @@
+{
+    "files": [
+        "src/server.ts"
+    ],
+    "quiet": false,
+    "watch": [
+        "src/"
+    ],
+    "deno_args": [
+        "--allow-read",
+        "--allow-net",
+        "--allow-env"
+    ]
+}

@@ -1,0 +1,15 @@
+# more info: https://github.com/umbopepato/velociraptor
+scripts:
+  start: deno run src/server.ts
+  # this reads
+  serve: denon run src/server.ts
+  test: deno test
+# this passes the `--allow-net` and `--allow-read`
+# flags for all scripts
+allow:
+  - read
+  - net
+# set environment variables for all scripts
+env:
+  PORT: 8080
+  HOST: '0.0.0.0'
