@@ -1,13 +1,28 @@
 import type { Context } from "../deps.ts";
 import { Template } from "../util/template.util.ts";
 
-export async function rootController(ctx: Context) {
-  // ctx.response.body = "Haiiii";
+/**
+ * @desc sets status code to 302 Found, and
+ * redirects to root '/'
+ * @info https://developer.mozilla.org/en-US/docs/Web/API/Headers
+ */
+export function rootController(ctx: Context) {
   const headers = new Headers();
-  headers.append("content-type", "text/html");
+  headers.append("location", "/home");
 
+  ctx.response.status = 302;
   ctx.response.headers = headers;
-  ctx.response.body = await Template.render("home.ejs", {
-    name: "thing",
+}
+
+export async function homeController(ctx: Context) {
+  await Template.render(ctx, "home.ejs");
+}
+
+/**
+ * @desc shows an about page
+ */
+export async function aboutController(ctx: Context) {
+  await Template.render(ctx, "about.ejs", {
+    stringOfText: "thing"
   });
 }

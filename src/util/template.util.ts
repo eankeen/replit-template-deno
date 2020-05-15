@@ -1,8 +1,6 @@
 import { path, dejs, Context } from "../deps.ts";
-import { Color } from "../util/console.util.ts";
-/**
- * @desc equivalent to node's __dirname
- */
+import { formatError } from "../util/console.util.ts";
+
 const _dirname = path.dirname(new URL(import.meta.url).pathname);
 
 /**
@@ -18,7 +16,7 @@ class Template {
   /**
    * @desc read the content of a template as a string
    */
-  async read(file: string, data: object = {}) {
+  async read(file: string, data: object = {}): Promise<string> {
     const absoluteFilePath = path.join(
       _dirname,
       "../views",
@@ -33,26 +31,19 @@ class Template {
    * these are resolves relative to the 'views' directory of this project
    * @param {object} data - any data you want to pass to the template for render
    */
-  async render(ctx: Context, file: string, data: object = {}) {
+  async render(ctx: Context, file: string, data: object = {}): Promise<void> {
     try {
-      if (!(ctx instanceof Context)) {
-        // this context: https://github.com/oakserver/oak/blob/master/context.ts#L12
-        console.log(Color.error("error: ensure the first parameter passed to `render()` is the Oak context (ctx)"));
-      }
-      if (typeof file !== 'string' || (typeof data === 'object' && !Array.isArray(data))) {
-        console.log(Color.error("error: ensure the second and third parmeters are a string and an object, respectively"))
-      }
       const htmlString = await this.read(file, data);
-
       // required because https://github.com/oakserver/oak/blob/d866c1baefd112ecfacf54412d1529942a5896f8/util.ts#L18
       // has false negatives (albeit rare)
       const headers = new Headers();
       headers.append("content-type", "text/html");
 
       ctx.response.headers = headers;
+      ctx.response.status = 200;
       ctx.response.body = htmlString;
     } catch (err) {
-      console.error(Color.error(err.stack));
+      console.error(formatError(err.stack));
       // const headers = new Headers()
       // headers.append('content-type', 'text/html')
 

@@ -1,3 +1,4 @@
+<%# basic html page %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,9 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/fox-css/dist/fox.dark.min.css"
   >
-  <title><% if (name) { %><%= name %><% } else {%>Default Title<% } %></title>
+  <title><% if (title) { %><%= title %><% } else {%>My Website<% } %></title>
 </head>
 <body>
+<main>
+<%- await include('partials/nav.ejs', {}) %>
 

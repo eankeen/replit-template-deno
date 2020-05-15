@@ -1,11 +1,12 @@
 import { denv } from "../deps.ts";
 import { Oak } from "../deps.ts";
-import { router } from "./routes/main.ts";
+import { rootRouter } from "./routes/rootRouter.ts";
 
 await denv.load("./.env");
 
 const app = new Oak();
-app.use(router.routes());
-app.use(router.allowedMethods());
+
+app.use(rootRouter.routes());
+app.use(rootRouter.allowedMethods());
 
 export { app };

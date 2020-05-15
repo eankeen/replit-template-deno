@@ -1,0 +1,23 @@
+{
+  "foxes": [
+    "Red Fox",
+    "Arctic Fox",
+    "Fennec Fox",
+    "Gray Fox",
+    "Corsac Fox"
+  ],
+  "wolves": [
+    "Arctic Wolf",
+    "Northwestern Wolf",
+    "Mexican Wolf",
+    "Japanese Wolf",
+    "Alexander Archipelago Wolf"
+  ],
+  "dogs": [
+    "Labrador Retriever",
+    "German Shepherd",
+    "Siberian Husky",
+    "Golden Retriever",
+    "Beagle"
+  ]
+}
