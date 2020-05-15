@@ -1,22 +1,41 @@
 # Deno Oak Template
 
-Template for starting an Oak web server. Oak runs on Deno, an alternative Typescript and Javascript runtime. The following contain some helpful resources for Deno, Oak, and ecosystem tools this boilerpalte template uses.
+Template for starting an Oak web server. Oak runs on Deno, an alternative Typescript and Javascript runtime. The following contain some helpful resources for Deno, Oak, and ecosystem tools this template uses.
 
 ## Usefull Resources
 
 - [Deno Manual](https://deno.land/manual)
 - [Deno Standard Library](https://deno.land/std)
 - [Deno 3rd Party Modules](https://deno.land)
+- [Oak Site](https://oakserver.github.io/oak)
 - [Awesome Deno](https://github.com/denolib/awesome-deno)
 - [Awesome Oak](https://github.com/eankeen/awesome-oak)
 
+## How to use
+
+We use [Velociraptor](###velociraptor) for run scripts.
+
+### Commands
+
+#### `vr start`
+
+Start app normally
+
+#### `vr serve`
+
+Use [denon](###denon) to start the app and restart is on file changes
+
+#### `vr test`
+
+Run all tests (located in `./src/tests`)
+
 ## Modules Used
 
-Deno is stil fairly new, so you might want to take some time to familiarize yourself with the following modules that we use in this template
+Deno is stil fairly new, so you might want to take some time to familiarize yourself with the following modules that we use
 
 ### [velociraptor](https://github.com/umbopepato/velociraptor)
 
-Velociraptor is a script runner for Deno. Roughly equivalent to Node's `npm run` command using defined `package.json` scripts. Located at `velociraptor.yaml`
+Velociraptor is a script runner for Deno. Roughly equivalent to Node's `npm run` commands using defined `package.json` scripts. Velociraptor's config is at `velociraptor.yaml`
 
 ### [denon](https://github.com/eliassjogreen/denon)
 
@@ -24,7 +43,7 @@ Denon is a file watcher; equivalent to Nodemon. Config at `.denorc.json`
 
 ### [oak](https://github.com/oakserver/oak)
 
-Oak is a popular web server framework (that includes router middleware). It's modeled after Node's Koa. Also check the [docs](https://oakserver.github.io/oak) and [awesome-oak](https://github.com/eankeen/awesome-oak) page
+Oak is a popular web server framework (that includes router middleware). It's modeled after Node's Koa.
 
 ### [dejs](https://github.com/syumai/dejs)
 

@@ -22,7 +22,14 @@ export async function homeController(ctx: Context) {
  * @desc shows an about page
  */
 export async function aboutController(ctx: Context) {
-  await Template.render(ctx, "about.ejs", {
-    stringOfText: "thing"
+  await Template.render(ctx, "about.ejs");
+}
+
+/**
+ * @desc shows the page that describes the api
+ */
+export async function aboutApiController(ctx: Context) {
+  await Template.render(ctx, "api.ejs", {
+    stringOfText: "There are the api routes. They are rather simple."
   });
 }

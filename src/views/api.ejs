@@ -1,0 +1,19 @@
+<%- await include('partials/header.ejs', { title: 'My Website' }) %>
+
+<h1>Api</h1>
+<article>
+  <p><%= stringOfText %></p>
+  <ul>
+    <li>
+      <a target="__blank" href="/api/fox"><code>/api/fox</code></a>
+    </li>
+    <li>
+      <a target="__blank" href="/api/wolf"><code>/api/wolf</code></a>
+    </li>
+    <li>
+      <a target="__blank" href="/api/dog"><code>/api/dog</code></a>
+    </li>
+  </ul>
+</article>
+
+<%- await include('partials/footer.ejs', {}) %>

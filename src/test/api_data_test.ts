@@ -24,12 +24,13 @@ Deno.test({
   }
 })
 
-const isObject = (value: any): boolean => typeof value === 'object' && !Array.isArray(value)
-const isArray = (value: any): boolean => Array.isArray(value)
 
 Deno.test({
   name: 'keys of animalData.json are correct',
   async fn(): Promise<void> {
+    const isObject = (value: any): boolean => typeof value === 'object' && !Array.isArray(value)
+    const isArray = (value: any): boolean => Array.isArray(value)
+
     const animalData: IAnimalDataPath = await readJson(animalDataPath) as IAnimalDataPath
 
     assert(isObject(animalData))
