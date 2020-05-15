@@ -1,2 +1,2 @@
 language = "deno"
-run = "deno install --allow-read --allow-env --allow-run -n vr https://deno.land/x/velociraptor/cli.ts && deno install -Af --unstable https://deno.land/x/denon/denon.ts && vr serve"
+run = "deno install --allow-read --allow-env --allow-run -n vr https://raw.githubusercontent.com/umbopepato/velociraptor/develop/cli.ts && deno install -Af --unstable https://deno.land/x/denon/denon.ts && vr serve"

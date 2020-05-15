@@ -2,14 +2,16 @@
 scripts:
   start: deno run src/server.ts
   # this reads
-  serve: denon run src/server.ts
+  serve: denon src/server.ts
   test: deno test
 # this passes the `--allow-net` and `--allow-read`
 # flags for all scripts
 allow:
   - read
   - net
+  - env
 # set environment variables for all scripts
 env:
-  PORT: 8080
-  HOST: '0.0.0.0'
+  PORT: 3000
+  # this doesn't do anything
+  # HOST: '0.0.0.0'

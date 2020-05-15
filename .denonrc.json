@@ -9,6 +9,7 @@
     "deno_args": [
         "--allow-read",
         "--allow-net",
-        "--allow-env"
+        "--allow-env",
+        "--unstable"
     ]
 }

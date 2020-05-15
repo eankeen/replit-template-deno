@@ -1,0 +1,8 @@
+<%- await include('partials/header.ejs', { title: 'My Website' }) %>
+<body>
+    <h1>this is home page</h1>
+  <% if (name) { %>
+    <h1>hello, <%= name %>!</h1>
+  <% } %>
+</body>
+<%- await include('partials/header.ejs', {}) %>
